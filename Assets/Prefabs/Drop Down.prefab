@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 666143568485808233}
   - component: {fileID: 308109793912271494}
   m_Layer: 0
-  m_Name: Pick Up
+  m_Name: Drop Down
   m_TagString: Drop Down
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a3d4e8bbc4da80246aca8b57857266ec, type: 2}
+  - {fileID: 2100000, guid: c22dffd06a227a84ba5884b32661a533, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
