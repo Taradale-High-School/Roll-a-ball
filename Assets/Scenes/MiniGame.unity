@@ -1166,6 +1166,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1243223496}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1089742400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089742402}
+  - component: {fileID: 1089742401}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1089742401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089742400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcea85655792bb944b17718d87ef1163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUp: {fileID: 666143568485808232, guid: fb630e12660efcf42b629fdc5192ba45, type: 3}
+  dropDown: {fileID: 666143568485808232, guid: 6a29d61da046aa14383e518720526608, type: 3}
+  countText: {fileID: 1988784844}
+  winText: {fileID: 344956680}
+--- !u!4 &1089742402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089742400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5727458, y: 1.6697038, z: 4.6245546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1163261513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1620282829
 Transform:
   m_ObjectHideFlags: 0
@@ -1859,8 +1906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  countText: {fileID: 1988784844}
-  winText: {fileID: 344956680}
+  gameManager: {fileID: 0}
 --- !u!54 &1940674089
 Rigidbody:
   m_ObjectHideFlags: 0

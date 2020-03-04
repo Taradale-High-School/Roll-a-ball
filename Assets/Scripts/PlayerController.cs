@@ -1,38 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    // Variables for physics of player
     public float speed;
     private Rigidbody rb;
-    public Text countText;
-    public Text winText;
-    private int count;
 
+    // Reference variables
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        int count = 0;
-        SetCountText();
-        winText.text = "";
+        rb = GetComponent<Rigidbody>();  // Get a reference to the players rigidbody
+        // Get a reference to the Game Manager script
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
-        rb.AddForce(movement * speed);
+        if (gameManager.isGameActive == true)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
+            rb.AddForce(movement * speed);
+        } else
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
     }
 
     //When the Primitive collides with the walls, it will reverse direction
@@ -41,18 +46,12 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
-            count++;
-            SetCountText();
+            gameManager.increaseCount();
         }
-        //Destroy(other.gameObject);
-    }
-
-    void SetCountText()
-    {
-        countText.text = "Count : " + count.ToString();
-        if (count>= 12)
+        else if (other.gameObject.CompareTag("Drop Down"))
         {
-            winText.text = "You win!!";
+            other.gameObject.SetActive(false);
+            gameManager.decreaseCount();
         }
     }
 }
