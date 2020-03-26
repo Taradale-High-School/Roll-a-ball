@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 308109793912271494}
   m_Layer: 0
   m_Name: Pick Up
-  m_TagString: Drop Down
+  m_TagString: Pick Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e142fefbeef7b4498a211a198a6da4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!54 &308109793912271494
 Rigidbody:
   m_ObjectHideFlags: 0

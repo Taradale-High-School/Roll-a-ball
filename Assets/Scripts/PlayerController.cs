@@ -44,11 +44,13 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pick Up"))
         {
+            print("pickup");
             other.gameObject.SetActive(false);
             gameManager.increaseCount();
         }
         else if (other.gameObject.CompareTag("Drop Down"))
         {
+            print("dropdown");
             other.gameObject.SetActive(false);
             gameManager.descreaseCount();
         }
